@@ -1,0 +1,21 @@
+Predicate: A Predicate<T> takes in one param of type T and returns a boolean result to indicate a decision for whatever check it represents.
+Used by methods like filter() to make a go-no go decision.
+
+Function: A Function<T, R> represents a function that takes a param of type T and returns a result of type R. 
+- It is more general and can be used anywhere we want to transform an input to another value. 
+- Used in method like map() whose aim is to transform the input from one type to another.
+- T and R both can be same type too. Example: transforming a list of string to list of uppercase strings using map().
+
+Optional class: Useful when result may be absent. Protects us from getting Null pointer by accident and makes it evident to user that 
+"no result found" is a possible solution.
+
+Reduce method: iterates over collection and also carries forward the result of the computation that the lambda expression returned.
+
+BinaryOperator: operation upon two operands of same type producing a result of same type
+
+collect() is also a reduce operation but it delegates the actual implementation to a Collector
+
+Collector acts as a sink object to receive elements passed by collect() and stores them in desired format: ArrayList, String, etc.
+
+How Java compiler knows when to pass parameter as the target or argument in method reference in static and instance methods?
+Java compiler checks if it's an instance method, parameter becomes target, if it's static method, parameter becomes argument
