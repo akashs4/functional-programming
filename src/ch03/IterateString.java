@@ -11,7 +11,7 @@ public class IterateString {
 		// In above, since we already provided target for method reference println,
 		// hence java used each int as argument instead of param
 
-//		str.chars().forEach(ch -> System.out.print((char) ch));
+//		str.chars().forEach(IterateString::printChar);
 		// can also do like this if we directly want stream of characters instead of int
 		str.chars().mapToObj(ch -> Character.valueOf((char) ch)).forEach(System.out::print);
 
