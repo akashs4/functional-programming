@@ -19,3 +19,13 @@ Collector acts as a sink object to receive elements passed by collect() and stor
 
 How Java compiler knows when to pass parameter as the target or argument in method reference in static and instance methods?
 Java compiler checks if it's an instance method, parameter becomes target, if it's static method, parameter becomes argument
+
+What is Higher Order Method?
+That creates and returns another functional expression with no side effect.
+
+Supplier: no args, returns a result.
+
+collect() method needs 3 information:
+1- how to make result container?(ArrayList::new)
+2- how to add single element to result container?(ArrayList::add)
+3- how to add all elements to result container?(ArrayList::addAll)
