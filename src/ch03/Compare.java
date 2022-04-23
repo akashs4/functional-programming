@@ -1,9 +1,11 @@
 package ch03;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -53,6 +55,21 @@ public class Compare {
 		// collect method will perform parallel additions into different sublists and
 		// then merge them in a thread safe manner into larger list
 
+		// GROUPING PEOPLE BY THEIR AGE
+		Map<Integer, List<String>> peopleByAge = people.stream().collect(
+				Collectors.groupingBy(Person::getAge, Collectors.mapping(Person::getName, Collectors.toList())));
+		// Collectors.mapping() method expects property on which to map and type of
+		// object to collect into
+		System.out.println("People grouped by age:");
+		System.out.println(peopleByAge);
+
+		// Sample: Group the names by their first character and then get oldest person
+		// in each group
+		Comparator<Person> byAgeComparison = Comparator.comparing(Person::getAge);
+		Map<Character, Optional<Person>> oldestPersonOfEachLetter = people.stream().collect(Collectors.groupingBy(
+				person -> person.getName().charAt(0), Collectors.reducing(BinaryOperator.maxBy(byAgeComparison))));
+		// performed reduce operation because want to find only the oldest person for each letter
+		System.out.println(oldestPersonOfEachLetter);
 	}
 
 	private static void printPeople(final List<Person> people, String message) {

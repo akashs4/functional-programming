@@ -29,3 +29,9 @@ collect() method needs 3 information:
 1- how to make result container?(ArrayList::new)
 2- how to add single element to result container?(ArrayList::add)
 3- how to add all elements to result container?(ArrayList::addAll)
+
+Collectors utility:
+-has methods like: toList(), toCollection(TreeSet::new), joining(", ") to concatenate
+-has summingInt(Employee::getSalary) -> sums the salary of all the employees
+-partitioningBy() method, to partition students into passing and failing 
+Map<Boolean, List<Student>> passingFailing = students.stream().collect(Collectors.partitioningBy(s -> s.getGrade() >= PASS_THRESHOLD));

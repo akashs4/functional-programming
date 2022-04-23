@@ -18,7 +18,7 @@ public class UsingCollections {
 //		friends.stream().map(String::toUpperCase).forEach(System.out::println);
 
 		// reusing lambda expressions
-		final List<String> editors = Arrays.asList("Brian", "Jackie", "John", "Mike");
+//		final List<String> editors = Arrays.asList("Brian", "Jackie", "John", "Mike");
 		final List<String> comrades = Arrays.asList("Kate", "Ken", "Nick", "Paula");
 
 //		final long countFriendsStartA = friends.stream().filter(friend -> friend.startsWith("A")).count();
