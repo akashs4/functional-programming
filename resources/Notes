@@ -35,3 +35,12 @@ Collectors utility:
 -has summingInt(Employee::getSalary) -> sums the salary of all the employees
 -partitioningBy() method, to partition students into passing and failing 
 Map<Boolean, List<Student>> passingFailing = students.stream().collect(Collectors.partitioningBy(s -> s.getGrade() >= PASS_THRESHOLD));
+
+FilenameFilter: Instances of classes that implement this Interface are used to filter filenames
+
+DirectoryStream: to iterate over the entries in a directory. A directory stream allows for the convenient use of the for-each construct
+to iterate over a directory
+
+flatMap merge a null reference to a Stream as an empty collection.
+
+WatchService: can use this to watch the registered objects for changes and events.
